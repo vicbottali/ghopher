@@ -5,6 +5,7 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs18.x
+  timeout: 10
   environment:
     FORK_URL: ${file(./config.json):FORK_URL}
 
@@ -19,4 +20,4 @@ plugins:
 
 custom:
   serverless-offline:
-    httpPort: 8000
+    httpPort: 4000

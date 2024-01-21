@@ -81,11 +81,11 @@ app.get('/aave-data', async (req, res) => {
             });
 
         console.log({ reserves, userReserves, reserveIncentives, userIncentives });
+        return { reserves, userReserves, reserveIncentives, userIncentives };
     }
 
-    await fetchContractData();
-
-    return res.status(200)
+    const response = await fetchContractData();
+    return res.send(response)
 });
 
 app.listen(8000, () =>
